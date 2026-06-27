@@ -17,13 +17,13 @@ Suite de pruebas automatizadas contra la API REST de [Restful-Booker](https://re
 
 ## Qué valida
 
-- **Health check** — disponibilidad de la API (`GET /ping`)
+- **Health check** — disponibilidad de la API (GET /ping)
 - **Flujo CRUD completo** — autenticación con token, creación, lectura, actualización y borrado de una reserva, con aserciones en cada paso
 
 ## Buenas prácticas aplicadas
 
-- **Page Object / separación de responsabilidades** — la lógica reutilizable vive en custom commands, los tests describen el "qué"
-- **Custom commands** — autenticación y creación de reservas encapsuladas (`cy.getAuthToken()`, `cy.createBooking()`)
+- **Separación de responsabilidades** — la lógica reutilizable vive en custom commands, los tests describen el "qué"
+- **Custom commands** — autenticación y creación de reservas encapsuladas
 - **Fixtures** — datos de prueba separados del código, en archivos JSON
 - **baseUrl centralizada** — un solo punto de configuración del entorno
 - **Reportes** — evidencia visual en HTML con Mochawesome
@@ -31,7 +31,7 @@ Suite de pruebas automatizadas contra la API REST de [Restful-Booker](https://re
 
 ## Estructura
 
-\`\`\`
+```
 cypress-api-framework/
 ├── cypress/
 │   ├── e2e/              # Tests
@@ -42,11 +42,11 @@ cypress-api-framework/
 ├── .github/workflows/    # Pipeline de CI
 ├── cypress.config.js     # Configuración
 └── package.json
-\`\`\`
+```
 
 ## Cómo correrlo localmente
 
-\`\`\`bash
+```bash
 # Instalar dependencias
 npm install
 
@@ -55,10 +55,10 @@ npm test
 
 # Correr y generar reporte HTML
 npm run report
-\`\`\`
+```
 
-El reporte se genera en \`cypress/reports/output.html\`.
+El reporte se genera en cypress/reports/output.html.
 
 ## CI/CD
 
-El pipeline corre automáticamente en cada push o pull request a \`main\`. El reporte de cada ejecución queda disponible como artefacto descargable en la pestaña **Actions**.
+El pipeline corre automáticamente en cada push o pull request a main. El reporte de cada ejecución queda disponible como artefacto descargable en la pestaña Actions.
